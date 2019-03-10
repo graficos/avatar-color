@@ -16,5 +16,7 @@
   "devDependencies": {
     "rollup": "^1.6.0"
   },
-  "main": "dist/index.js"
+  "main": "dist/avatar-color.cjs.js",
+  "module": "dist/avatar-color.esm.js",
+  "browser": "dist/avatar-color.umd.js"
 }
