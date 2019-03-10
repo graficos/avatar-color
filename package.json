@@ -1,6 +1,6 @@
 {
   "name": "@graficos/avatar-color",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Single function exported as package that generates an HSL color from a string, i.e.: user names, etc.",
   "keywords": [],
   "author": "paul_melero",
