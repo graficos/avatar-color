@@ -1,0 +1,18 @@
+{
+  "name": "avatar-color",
+  "version": "1.0.0",
+  "description": "Single function exported as package that generates an HSL color from a string, i.e.: user names, etc.",
+  "keywords": [],
+  "author": "Paul Melero",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "rollup": "^1.6.0"
+  }
+}
