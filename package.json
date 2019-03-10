@@ -15,5 +15,6 @@
   ],
   "devDependencies": {
     "rollup": "^1.6.0"
-  }
+  },
+  "main": "dist/index.js"
 }
