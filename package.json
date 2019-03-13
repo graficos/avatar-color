@@ -1,6 +1,6 @@
 {
   "name": "@graficos/avatar-color",
-  "version": "1.0.5",
+  "version": "1.2.0",
   "description": "Single function exported as package that generates an HSL color from a string, i.e.: user names, etc.",
   "keywords": [],
   "author": "paul_melero",
@@ -14,7 +14,8 @@
     "dist"
   ],
   "devDependencies": {
-    "rollup": "^1.6.0"
+    "rollup": "^1.6.0",
+    "rollup-plugin-terser": "^4.0.4"
   },
   "main": "dist/avatar-color.cjs.js",
   "module": "dist/avatar-color.esm.js",
