@@ -1,57 +1,68 @@
 // @ts-check
-/**
- * @param {string} string
- */
-function getBase16IntFromString(string) {
-  return parseInt('0x' + string, 16);
-}
+
+const available16Chars = 'abcdef1234567890';
 
 /**
- * @param {string} string
+ * @param {number} number
  */
-function get360Module(string) {
-  let base16Int = getBase16IntFromString(string);
-  if (isNaN(base16Int)) {
-    base16Int = getNewCandidateFromAlphabetPosition(string)[0];
+function getNumberIn360Cycles(number) {
+  if (number > 360) {
+    return getNumberIn360Cycles(Math.ceil(((number / 360) * 20) + 16))
   }
-  return Math.ceil(360 / base16Int);
+  return number;
+}
+
+const getHexChar = /**
+ * @param {string} string
+ */
+ string => {
+  const parsed = parseInt(`0x${string}`, 16)
+  // console.log('parsed', parsed)
+  return parsed
 }
 
 /**
  * @param {string} string
- * @returns {Array} Array of numbers
  */
-function getNewCandidateFromAlphabetPosition(string) {
-  const sample = string.length > 5 ? string.substring(0, 5) : string;
-  return [...sample].map(char => Math.abs(Math.ceil((parseInt(char, 36) - 10))) + 1).filter(position => position >= 0);
+function getNumerIn360RangeFromString(string) {
+  const sample = string.length > 16 ? string.substring(0, 16): string;
+  // console.log({sample})
+  const arrayOfNumbers = [...sample]
+    .filter(char => char !== ' ' || !char)
+    .map(getHexChar)
+    .reduce((acc, currentNumber, i) => ([
+      ...acc,
+      isNaN(currentNumber) ?
+        getHexChar(available16Chars[i]) :
+          currentNumber,
+    ]), [])
+  const total = arrayOfNumbers.reduce((a, b) => a + (b * 10), 0)
+  // console.log({arrayOfNumbers, total})
+  return getNumberIn360Cycles(total)
 }
 
 /**
  * @param {string} string
  */
 function getCharHex(string) {
-  let hex = '';
-  if (!string || string.length === 0) {
-    return get360Module(' ');
+  if (!string || !string.length || typeof string !== 'string') {
+    return '0'
   }
   try {
-    const numberCandidate = getNewCandidateFromAlphabetPosition(string)[0];
-    let strIn16 = numberCandidate.toString(16);
-    hex = '' + get360Module(strIn16);
-    return hex;
+    return '' + getNumerIn360RangeFromString(string);
   } catch (error) {
     console.log({error});
   }
 }
 
 /**
- * Returns HSL/HSLA format color
+ * Returns HSL/HSLA format color as a astring
  * @param {string} entryString
- * @param {number} [saturation]
- * @param {number} [light]
- * @param {number} [alpha]
+ * @param {number} [saturation=45]
+ * @param {number} [light=50]
+ * @param {number} [alpha=1]
  */
-export default function gGetAvatarColor(entryString, saturation = 30, light = 50, alpha = 1) {
+export default function gGetAvatarColor(entryString, saturation = 45, light = 50, alpha = 1) {
   let color = `hsl${ alpha !== 1 ? 'a' : '' }(`;
   entryString = ('' + entryString) || ' ';
   color += getCharHex(entryString);

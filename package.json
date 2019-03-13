@@ -14,7 +14,9 @@
     "dist"
   ],
   "devDependencies": {
-    "rollup": "^1.6.0"
+    "rollup": "^1.6.0",
+    "rollup-plugin-sourcemaps": "^0.4.2",
+    "rollup-plugin-terser": "^4.0.4"
   },
   "main": "dist/avatar-color.cjs.js",
   "module": "dist/avatar-color.esm.js",
