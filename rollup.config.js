@@ -8,7 +8,7 @@ function config({ format, minify, input }) {
   return {
     input: `./src/index.js`,
     output: {
-      name: 'gGetAvatarColor',
+      name: 'avatar-color',
       file: `${dir}/${input}${minifierSuffix}.${ext}`,
       format,
       sourcemap: true
@@ -27,10 +27,10 @@ function config({ format, minify, input }) {
 require('rimraf').sync('dist');
 
 export default [
-  { input: 'gGetAvatarColor', format: 'esm', minify: false },
-  { input: 'gGetAvatarColor', format: 'esm', minify: true },
-  { input: 'gGetAvatarColor', format: 'umd', minify: false },
-  { input: 'gGetAvatarColor', format: 'umd', minify: true },
-  { input: 'gGetAvatarColor', format: 'cjs', minify: false },
-  { input: 'gGetAvatarColor', format: 'cjs', minify: true },
+  { input: 'avatar-color', format: 'esm', minify: false },
+  { input: 'avatar-color', format: 'esm', minify: true },
+  { input: 'avatar-color', format: 'umd', minify: false },
+  { input: 'avatar-color', format: 'umd', minify: true },
+  { input: 'avatar-color', format: 'cjs', minify: false },
+  { input: 'avatar-color', format: 'cjs', minify: true },
 ].map(config)

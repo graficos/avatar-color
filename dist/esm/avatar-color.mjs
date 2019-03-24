@@ -71,4 +71,4 @@ function gGetAvatarColor(entryString, saturation = 45, light = 50, alpha = 1) {
 }
 
 export default gGetAvatarColor;
-//# sourceMappingURL=gGetAvatarColor.mjs.map
+//# sourceMappingURL=avatar-color.mjs.map

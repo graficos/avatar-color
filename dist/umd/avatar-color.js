@@ -1,7 +1,7 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
-  (global = global || self, global.gGetAvatarColor = factory());
+  (global = global || self, global['avatar-color'] = factory());
 }(this, function () { 'use strict';
 
   // @ts-check
@@ -79,4 +79,4 @@
   return gGetAvatarColor;
 
 }));
-//# sourceMappingURL=gGetAvatarColor.js.map
+//# sourceMappingURL=avatar-color.js.map
