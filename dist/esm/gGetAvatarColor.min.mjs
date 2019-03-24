@@ -1,1 +1,2 @@
 const t="abcdef1234567890";const r=t=>{return parseInt(`0x${t}`,16)};function e(e){return function t(r){return r>360?t(Math.ceil(r/360*20+16)):r}([...e.length>16?e.substring(0,16):e].filter(t=>" "!==t||!t).map(r).reduce((e,n,u)=>[...e,isNaN(n)?r(t[u]):n],[]).reduce((t,r)=>t+10*r,0))}export default function(t,r=45,n=50,u=1){let c=`hsl${1!==u?"a":""}(`;return c+=function(t){if(!t||!t.length||"string"!=typeof t)return"0";try{return""+e(t)}catch(t){console.log({error:t})}}(t=""+t||" "),c+=`, ${r}%, ${n}%${1!==u?", "+u:""})`}
+//# sourceMappingURL=gGetAvatarColor.min.mjs.map
