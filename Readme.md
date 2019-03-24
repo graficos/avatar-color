@@ -1,4 +1,6 @@
-﻿# Installation
+﻿# Avatar Color Generator
+
+## Installation
 
 Install it
 
@@ -8,4 +10,12 @@ Install it
 
 # or via yarn
 > yarn add @graficos/avatar-color
+```
+
+## Usage
+
+```
+import gGetAvatarColor from '@graficos/avatar-color';
+
+console.log(gGetAvatarColor('asdf'));
 ```
