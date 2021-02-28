@@ -1,3 +1,4 @@
+import gGetAvatarColor from 'https://unpkg.com/@graficos/avatar-color/dist/esm/avatar-color.mjs'
 
 const otherChars = `
 <p>Other Chars...</p>

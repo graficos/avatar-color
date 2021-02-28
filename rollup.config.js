@@ -1,4 +1,4 @@
-import { terser } from 'rollup-plugin-terser';
+import { terser } from 'rollup-plugin-terser'
 
 function config({ format, minify, input }) {
   const dir = `dist/${format}/`
@@ -11,20 +11,20 @@ function config({ format, minify, input }) {
       name: 'avatar-color',
       file: `${dir}/${input}${minifierSuffix}.${ext}`,
       format,
-      sourcemap: true
+      sourcemap: true,
     },
     plugins: [
-      minify ?
-        terser({
-          sourcemap: true,
-          compress: true,
-          mangle: {reserved: 'gGetAvatarColor'}
-        }) : []
-    ]
+      minify
+        ? terser({
+            compress: true,
+            mangle: { reserved: 'gGetAvatarColor' },
+          })
+        : [],
+    ],
   }
 }
 
-require('rimraf').sync('dist');
+require('rimraf').sync('dist')
 
 export default [
   { input: 'avatar-color', format: 'esm', minify: false },

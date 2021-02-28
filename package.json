@@ -16,7 +16,7 @@
   "devDependencies": {
     "rimraf": "^2.6.3",
     "rollup": "^1.6.0",
-    "rollup-plugin-terser": "^4.0.4"
+    "rollup-plugin-terser": "^7.0.2"
   },
   "main": "dist/umd/avatar-color.min.js",
   "module": "dist/esm/avatar-color.mjs"
